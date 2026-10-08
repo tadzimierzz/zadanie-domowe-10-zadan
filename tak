@@ -1,0 +1,46 @@
+numbers = []
+
+for i in range(5):
+    liczba = int(input("Podaj liczbę: "))
+    numbers.append(liczba)
+
+suma = sum(numbers)
+
+najwieksza = numbers[0]
+for liczba in numbers:
+    if liczba > najwieksza:
+        najwieksza = liczba
+
+najmniejsza = numbers[0]
+for liczba in numbers:
+    if liczba < najmniejsza:
+        najmniejsza = liczba
+
+srednia = suma / len(numbers)
+
+parzyste = 0
+for liczba in numbers:
+    if liczba % 2 == 0:
+        parzyste += 1
+
+duplicates = []
+
+for liczba in numbers:
+    if numbers.count(liczba) > 1 and liczba not in duplicates:
+        duplicates.append(liczba)
+
+numbers = list(dict.fromkeys(numbers))
+
+squares = []
+
+for liczba in numbers:
+    squares.append(liczba ** 2)
+
+print("Suma:", suma)
+print("Największa liczba:", najwieksza)
+print("Najmniejsza liczba:", najmniejsza)
+print("Średnia:", srednia)
+print("Liczby parzyste:", parzyste)
+print("Powtarzające się:", duplicates)
+print("Bez powtórzeń:", numbers)
+print("Kwadraty:", squares)
